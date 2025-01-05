@@ -4,5 +4,6 @@
 
 html,
 body {
-  background-color: #f1f1f1;
+  background-image: url('./wintery-sunburst.svg');
+  background-position: center;
 }

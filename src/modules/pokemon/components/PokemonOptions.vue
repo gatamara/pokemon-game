@@ -30,10 +30,10 @@ button {
 }
 
 .correct {
-  @apply bg-green-500 text-white
+  @apply bg-green-500 text-white hover:bg-green-600
 }
 
 .incorrect {
-  @apply bg-red-300/60
+  @apply bg-red-300/70 hover:bg-red-300
 }
 </style>
