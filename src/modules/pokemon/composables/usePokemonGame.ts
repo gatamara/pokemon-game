@@ -7,6 +7,8 @@ export const usePokemonGame = () => {
   const gameStatus = ref<GameStatus>(GameStatus.Playing) //aqui vamos a tener 3 estados, donde mi estado inicial es Playing
   const pokemons = ref<Pokemon[]>([])
   const pokemonOptions = ref<Pokemon[]>([])
+  const totalWin = ref<number>(0)
+  const totalLost = ref<number>(0)
 
   const randomPokemon = computed(() => {
     const randomIndex = Math.floor(Math.random() * pokemonOptions.value.length)
@@ -45,7 +47,10 @@ export const usePokemonGame = () => {
         spread: 150,
         origin: { y: 0.6 },
       })
+      totalWin.value++
       return
+    } else {
+      totalLost.value++
     }
     gameStatus.value = GameStatus.Lost
   }
@@ -63,6 +68,8 @@ export const usePokemonGame = () => {
     isLoading,
     pokemonOptions,
     randomPokemon,
+    totalWin,
+    totalLost,
     //Methos
     getNextRound,
     checkAnswer,
