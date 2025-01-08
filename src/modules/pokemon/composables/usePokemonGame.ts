@@ -57,8 +57,6 @@ export const usePokemonGame = () => {
 
   onMounted(async () => {
     // hay mas control con esto, aun que sepamos que se va a ejecutar cuando se monta, cuando pase el script setup
-
-    // await new Promise((r) => setTimeout(r, 1000))
     pokemons.value = await getPokemons()
     getNextRound()
   })
