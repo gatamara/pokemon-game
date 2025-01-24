@@ -1,7 +1,7 @@
 import PokemonOptions from '@/modules/pokemon/components/PokemonOptions.vue'
 import { mount } from '@vue/test-utils'
 
-describe('<PokemonOpstions />', () => {
+describe('<PokemonOptions />', () => {
   const options = [
     { id: 1, name: 'Bulbasaur' },
     { id: 2, name: 'Ivisaur' },
@@ -44,6 +44,8 @@ describe('<PokemonOpstions />', () => {
 
     buttons.forEach((button) => {
       //vamos a barrer todos los botones
+      const attrs = button.attributes()
+      console.log(attrs)
       const attributes = Object.keys(button.attributes()) //tomamos todas las llaves que tengan ahi
       expect(attributes).toContain('disabled') //evaluamos si existe dentro de un arreglo la propiedad disabled
     })

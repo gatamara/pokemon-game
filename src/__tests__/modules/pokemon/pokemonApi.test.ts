@@ -2,7 +2,8 @@ import { pokemonApi } from '@/modules/pokemon/api/pokemonApi'
 
 describe('pokemonApi', () => {
   test('should be configured as expected', () => {
-    const baseUrl = 'https://pokeapi.co/api/v2/pokemon'
-    expect(pokemonApi.defaults.baseURL).toBe(baseUrl)
+    const expectedValue = 'https://pokeapi.co/api/v2/pokemon'
+    const result = pokemonApi.defaults.baseURL
+    expect(result).toBe(expectedValue)
   })
 })
